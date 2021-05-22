@@ -5,7 +5,7 @@ using AndroidX.AppCompat.App;
 
 namespace FiveGSwitch.UI
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
+    //[Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)] // Uncomment for debug purpose
     public class MainActivity : AppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -15,6 +15,7 @@ namespace FiveGSwitch.UI
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
         }
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
