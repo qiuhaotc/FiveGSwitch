@@ -818,6 +818,7 @@ namespace FiveGSwitch.UI
 			global::FiveGSwitch.Business.Resource.Id.useLogo = global::FiveGSwitch.UI.Resource.Id.useLogo;
 			global::FiveGSwitch.Business.Resource.Id.view_tree_saved_state_registry_owner = global::FiveGSwitch.UI.Resource.Id.view_tree_saved_state_registry_owner;
 			global::FiveGSwitch.Business.Resource.Id.visible_removing_fragment_view_tag = global::FiveGSwitch.UI.Resource.Id.visible_removing_fragment_view_tag;
+			global::FiveGSwitch.Business.Resource.Id.widget = global::FiveGSwitch.UI.Resource.Id.widget;
 			global::FiveGSwitch.Business.Resource.Id.withText = global::FiveGSwitch.UI.Resource.Id.withText;
 			global::FiveGSwitch.Business.Resource.Id.wrap_content = global::FiveGSwitch.UI.Resource.Id.wrap_content;
 			global::FiveGSwitch.Business.Resource.Integer.abc_config_activityDefaultDur = global::FiveGSwitch.UI.Resource.Integer.abc_config_activityDefaultDur;
@@ -861,6 +862,7 @@ namespace FiveGSwitch.UI
 			global::FiveGSwitch.Business.Resource.Layout.abc_select_dialog_material = global::FiveGSwitch.UI.Resource.Layout.abc_select_dialog_material;
 			global::FiveGSwitch.Business.Resource.Layout.abc_tooltip = global::FiveGSwitch.UI.Resource.Layout.abc_tooltip;
 			global::FiveGSwitch.Business.Resource.Layout.custom_dialog = global::FiveGSwitch.UI.Resource.Layout.custom_dialog;
+			global::FiveGSwitch.Business.Resource.Layout.five_g_widget = global::FiveGSwitch.UI.Resource.Layout.five_g_widget;
 			global::FiveGSwitch.Business.Resource.Layout.notification_action = global::FiveGSwitch.UI.Resource.Layout.notification_action;
 			global::FiveGSwitch.Business.Resource.Layout.notification_action_tombstone = global::FiveGSwitch.UI.Resource.Layout.notification_action_tombstone;
 			global::FiveGSwitch.Business.Resource.Layout.notification_template_custom_big = global::FiveGSwitch.UI.Resource.Layout.notification_template_custom_big;
@@ -901,6 +903,7 @@ namespace FiveGSwitch.UI
 			global::FiveGSwitch.Business.Resource.String.search_menu_title = global::FiveGSwitch.UI.Resource.String.search_menu_title;
 			global::FiveGSwitch.Business.Resource.String.status_bar_notification_info_overflow = global::FiveGSwitch.UI.Resource.String.status_bar_notification_info_overflow;
 			global::FiveGSwitch.Business.Resource.String.tile_name = global::FiveGSwitch.UI.Resource.String.tile_name;
+			global::FiveGSwitch.Business.Resource.String.widget_name = global::FiveGSwitch.UI.Resource.String.widget_name;
 			global::FiveGSwitch.Business.Resource.Style.AlertDialog_AppCompat = global::FiveGSwitch.UI.Resource.Style.AlertDialog_AppCompat;
 			global::FiveGSwitch.Business.Resource.Style.AlertDialog_AppCompat_Light = global::FiveGSwitch.UI.Resource.Style.AlertDialog_AppCompat_Light;
 			global::FiveGSwitch.Business.Resource.Style.Animation_AppCompat_Dialog = global::FiveGSwitch.UI.Resource.Style.Animation_AppCompat_Dialog;
@@ -5788,10 +5791,13 @@ namespace FiveGSwitch.UI
 			public const int visible_removing_fragment_view_tag = 2131230953;
 			
 			// aapt resource value: 0x7F0800EA
-			public const int withText = 2131230954;
+			public const int widget = 2131230954;
 			
 			// aapt resource value: 0x7F0800EB
-			public const int wrap_content = 2131230955;
+			public const int withText = 2131230955;
+			
+			// aapt resource value: 0x7F0800EC
+			public const int wrap_content = 2131230956;
 			
 			static Id()
 			{
@@ -6049,40 +6055,43 @@ namespace FiveGSwitch.UI
 			public const int design_text_input_password_icon = 2131427373;
 			
 			// aapt resource value: 0x7F0B002E
-			public const int mtrl_layout_snackbar = 2131427374;
+			public const int five_g_widget = 2131427374;
 			
 			// aapt resource value: 0x7F0B002F
-			public const int mtrl_layout_snackbar_include = 2131427375;
+			public const int mtrl_layout_snackbar = 2131427375;
 			
 			// aapt resource value: 0x7F0B0030
-			public const int notification_action = 2131427376;
+			public const int mtrl_layout_snackbar_include = 2131427376;
 			
 			// aapt resource value: 0x7F0B0031
-			public const int notification_action_tombstone = 2131427377;
+			public const int notification_action = 2131427377;
 			
 			// aapt resource value: 0x7F0B0032
-			public const int notification_template_custom_big = 2131427378;
+			public const int notification_action_tombstone = 2131427378;
 			
 			// aapt resource value: 0x7F0B0033
-			public const int notification_template_icon_group = 2131427379;
+			public const int notification_template_custom_big = 2131427379;
 			
 			// aapt resource value: 0x7F0B0034
-			public const int notification_template_part_chronometer = 2131427380;
+			public const int notification_template_icon_group = 2131427380;
 			
 			// aapt resource value: 0x7F0B0035
-			public const int notification_template_part_time = 2131427381;
+			public const int notification_template_part_chronometer = 2131427381;
 			
 			// aapt resource value: 0x7F0B0036
-			public const int select_dialog_item_material = 2131427382;
+			public const int notification_template_part_time = 2131427382;
 			
 			// aapt resource value: 0x7F0B0037
-			public const int select_dialog_multichoice_material = 2131427383;
+			public const int select_dialog_item_material = 2131427383;
 			
 			// aapt resource value: 0x7F0B0038
-			public const int select_dialog_singlechoice_material = 2131427384;
+			public const int select_dialog_multichoice_material = 2131427384;
 			
 			// aapt resource value: 0x7F0B0039
-			public const int support_simple_spinner_dropdown_item = 2131427385;
+			public const int select_dialog_singlechoice_material = 2131427385;
+			
+			// aapt resource value: 0x7F0B003A
+			public const int support_simple_spinner_dropdown_item = 2131427386;
 			
 			static Layout()
 			{
@@ -6265,6 +6274,9 @@ namespace FiveGSwitch.UI
 			
 			// aapt resource value: 0x7F0D0030
 			public const int tile_name = 2131558448;
+			
+			// aapt resource value: 0x7F0D0031
+			public const int widget_name = 2131558449;
 			
 			static String()
 			{
