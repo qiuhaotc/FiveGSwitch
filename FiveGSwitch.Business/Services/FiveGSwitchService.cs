@@ -8,7 +8,7 @@ namespace FiveGSwitch.Business
     [Service(Name = "com.qh.fivegswitch.FiveGSwitchService",
              Permission = Android.Manifest.Permission.BindQuickSettingsTile,
              Label = "@string/tile_name",
-             Icon = "@drawable/five_g_switch_enable")]
+             Icon = "@drawable/five_g_switch_icon")]
     [IntentFilter(new[] { ActionQsTile })]
     public class FiveGSwitchService : TileService
     {

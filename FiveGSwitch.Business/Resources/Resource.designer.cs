@@ -1934,46 +1934,49 @@ namespace FiveGSwitch.Business
 			public static int five_g_switch_enable = 2131099743;
 			
 			// aapt resource value: 0x7F060060
-			public static int notification_action_background = 2131099744;
+			public static int five_g_switch_icon = 2131099744;
 			
 			// aapt resource value: 0x7F060061
-			public static int notification_bg = 2131099745;
+			public static int notification_action_background = 2131099745;
 			
 			// aapt resource value: 0x7F060062
-			public static int notification_bg_low = 2131099746;
+			public static int notification_bg = 2131099746;
 			
 			// aapt resource value: 0x7F060063
-			public static int notification_bg_low_normal = 2131099747;
+			public static int notification_bg_low = 2131099747;
 			
 			// aapt resource value: 0x7F060064
-			public static int notification_bg_low_pressed = 2131099748;
+			public static int notification_bg_low_normal = 2131099748;
 			
 			// aapt resource value: 0x7F060065
-			public static int notification_bg_normal = 2131099749;
+			public static int notification_bg_low_pressed = 2131099749;
 			
 			// aapt resource value: 0x7F060066
-			public static int notification_bg_normal_pressed = 2131099750;
+			public static int notification_bg_normal = 2131099750;
 			
 			// aapt resource value: 0x7F060067
-			public static int notification_icon_background = 2131099751;
+			public static int notification_bg_normal_pressed = 2131099751;
 			
 			// aapt resource value: 0x7F060068
-			public static int notification_template_icon_bg = 2131099752;
+			public static int notification_icon_background = 2131099752;
 			
 			// aapt resource value: 0x7F060069
-			public static int notification_template_icon_low_bg = 2131099753;
+			public static int notification_template_icon_bg = 2131099753;
 			
 			// aapt resource value: 0x7F06006A
-			public static int notification_tile_bg = 2131099754;
+			public static int notification_template_icon_low_bg = 2131099754;
 			
 			// aapt resource value: 0x7F06006B
-			public static int notify_panel_notification_icon_bg = 2131099755;
+			public static int notification_tile_bg = 2131099755;
 			
 			// aapt resource value: 0x7F06006C
-			public static int tooltip_frame_dark = 2131099756;
+			public static int notify_panel_notification_icon_bg = 2131099756;
 			
 			// aapt resource value: 0x7F06006D
-			public static int tooltip_frame_light = 2131099757;
+			public static int tooltip_frame_dark = 2131099757;
+			
+			// aapt resource value: 0x7F06006E
+			public static int tooltip_frame_light = 2131099758;
 			
 			static Drawable()
 			{
