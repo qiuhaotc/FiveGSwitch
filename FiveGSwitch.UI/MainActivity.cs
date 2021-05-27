@@ -5,7 +5,7 @@ using AndroidX.AppCompat.App;
 
 namespace FiveGSwitch.UI
 {
-    //[Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)] // Uncomment for debug purpose
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)] // Uncomment for debug purpose
     public class MainActivity : AppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)

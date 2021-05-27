@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Linq;
 using Android.App;
+using Android.Util;
 using Android.Widget;
 
 namespace FiveGSwitch.Business
 {
     public class MIUISwitchProvider : ISwitchProvider
     {
+        public static Lazy<MIUISwitchProvider> Provider = new Lazy<MIUISwitchProvider>(() => new MIUISwitchProvider());
+
         static Lazy<Java.Lang.Class> telephoneManager =
             new Lazy<Java.Lang.Class>(() =>
                 Java.Lang.Class.ForName("miui.telephony.TelephonyManager")
@@ -16,6 +19,8 @@ namespace FiveGSwitch.Business
         Lazy<Java.Lang.Reflect.Method> getIsFiveGCapableMethod = new Lazy<Java.Lang.Reflect.Method>(() => telephoneManager.Value.GetMethod("isFiveGCapable"));
         Lazy<Java.Lang.Reflect.Method> getIsUserFiveGEnabled = new Lazy<Java.Lang.Reflect.Method>(() => telephoneManager.Value.GetMethod("isUserFiveGEnabled"));
         Lazy<Java.Lang.Reflect.Method> setUserFiveGEnabled = new Lazy<Java.Lang.Reflect.Method>(() => telephoneManager.Value.GetMethod("setUserFiveGEnabled", Java.Lang.Boolean.Type));
+
+        MIUISwitchProvider() { }
 
         public bool IsEnabled
         {
@@ -36,8 +41,8 @@ namespace FiveGSwitch.Business
                 }
                 catch (Exception ex)
                 {
-                    Toast.MakeText(Application.Context, $"Error Occur: {ex}", ToastLength.Short).Show();
-
+                    Toast.MakeText(Application.Context, $"5G not capable", ToastLength.Short).Show();
+                    Log.Warn(nameof(MIUISwitchProvider), "Error occur for capable check: " + ex);
                     return false;
                 }
             }

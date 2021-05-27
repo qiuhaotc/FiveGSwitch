@@ -7,6 +7,7 @@
     <ImageButton
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/five_g_switch"
+        android:id="@+id/SwitchButton"
+        android:background="@drawable/five_g_switch_enable"
         android:contentDescription="@string/widget_name"/>
 </RelativeLayout>

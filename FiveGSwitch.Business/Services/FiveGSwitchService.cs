@@ -8,14 +8,12 @@ namespace FiveGSwitch.Business
     [Service(Name = "com.qh.fivegswitch.FiveGSwitchService",
              Permission = Android.Manifest.Permission.BindQuickSettingsTile,
              Label = "@string/tile_name",
-             Icon = "@drawable/five_g_switch")]
+             Icon = "@drawable/five_g_switch_enable")]
     [IntentFilter(new[] { ActionQsTile })]
     public class FiveGSwitchService : TileService
     {
         bool capable;
         bool active;
-
-        Lazy<MIUISwitchProvider> provider = new Lazy<MIUISwitchProvider>(() => new MIUISwitchProvider());
 
         public override void OnClick()
         {
@@ -23,9 +21,9 @@ namespace FiveGSwitch.Business
 
             if (QsTile != null)
             {
-                provider.Value.Toggle();
+                MIUISwitchProvider.Provider.Value.Toggle();
 
-                active = provider.Value.IsEnabled;
+                active = MIUISwitchProvider.Provider.Value.IsEnabled;
                 QsTile.State = active ? TileState.Active : TileState.Inactive;
                 QsTile.UpdateTile();
             }
@@ -34,7 +32,7 @@ namespace FiveGSwitch.Business
         protected override void AttachBaseContext(Context @base)
         {
             base.AttachBaseContext(@base);
-            capable = provider.Value.Capable;
+            capable = MIUISwitchProvider.Provider.Value.Capable;
         }
 
         public override void OnStartListening()
@@ -45,7 +43,7 @@ namespace FiveGSwitch.Business
             {
                 if (QsTile != null)
                 {
-                    active = provider.Value.IsEnabled;
+                    active = MIUISwitchProvider.Provider.Value.IsEnabled;
                     QsTile.State = active ? TileState.Active : TileState.Inactive;
                     QsTile.UpdateTile();
                 }
