@@ -1,5 +1,4 @@
-﻿using System;
-using Android.App;
+﻿using Android.App;
 using Android.Appwidget;
 using Android.Content;
 using Android.Widget;
@@ -11,12 +10,8 @@ namespace FiveGSwitch.Business
     [MetaData("android.appwidget.provider", Resource = "@xml/five_g_widget_provider")]
     public class MIUIFiveGWidgetProvider : AppWidgetProvider
     {
-        public const string ACTION_WIDGET_SWITCH = "ACTION_WIDGET_SWITCH";
-
         public override void OnUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds)
         {
-            //Update Widget layout
-            //Run when create widget or meet update time
             var me = new ComponentName(context, Java.Lang.Class.FromType(typeof(MIUIFiveGWidgetProvider)).Name);
             appWidgetManager.UpdateAppWidget(me, BuildRemoteViews(context, appWidgetIds));
         }
@@ -26,12 +21,12 @@ namespace FiveGSwitch.Business
             base.OnReceive(context, intent);
 
             // Check if the click is from the "ACTION_WIDGET_SWITCH" button
-            if (ACTION_WIDGET_SWITCH.Equals(intent.Action))
+            if (Constants.ACTION_WIDGET_SWITCH.Equals(intent.Action))
             {
-                if (MIUISwitchProvider.Provider.Value.Capable)
+                if (SwitchProviderHelper.Provider.Value.Capable)
                 {
-                    MIUISwitchProvider.Provider.Value.Toggle();
-                    var isEnabled = MIUISwitchProvider.Provider.Value.IsEnabled;
+                    SwitchProviderHelper.Provider.Value.Toggle();
+                    var isEnabled = SwitchProviderHelper.Provider.Value.IsEnabled;
                     Toast.MakeText(context, $"5G {(isEnabled ? "Enabled" : "Disabled")}", ToastLength.Short).Show();
 
                     var widgetView = new RemoteViews(context.PackageName, Resource.Layout.five_g_widget);
@@ -52,7 +47,7 @@ namespace FiveGSwitch.Business
             var widgetView = new RemoteViews(context.PackageName, Resource.Layout.five_g_widget);
 
             //Update Image
-            SetImages(widgetView, MIUISwitchProvider.Provider.Value.Capable && MIUISwitchProvider.Provider.Value.IsEnabled);
+            SetImages(widgetView, SwitchProviderHelper.Provider.Value.Capable && SwitchProviderHelper.Provider.Value.IsEnabled);
 
             //Handle click event of button on Widget
             RegisterClicks(context, appWidgetIds, widgetView);
@@ -74,12 +69,8 @@ namespace FiveGSwitch.Business
 
         void RegisterClicks(Context context, int[] appWidgetIds, RemoteViews widgetView)
         {
-            var intent = new Intent(context, typeof(MIUIFiveGWidgetProvider));
-            intent.SetAction(AppWidgetManager.ActionAppwidgetUpdate);
-            intent.PutExtra(AppWidgetManager.ExtraAppwidgetIds, appWidgetIds);
-
             //SwitchButton
-            widgetView.SetOnClickPendingIntent(Resource.Id.SwitchButton, GetPendingSelfIntent(context, ACTION_WIDGET_SWITCH));
+            widgetView.SetOnClickPendingIntent(Resource.Id.SwitchButton, GetPendingSelfIntent(context, Constants.ACTION_WIDGET_SWITCH));
         }
 
         PendingIntent GetPendingSelfIntent(Context context, string action)

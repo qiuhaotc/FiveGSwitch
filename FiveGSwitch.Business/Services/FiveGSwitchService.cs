@@ -1,5 +1,4 @@
-﻿using System;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.Service.QuickSettings;
 
@@ -21,9 +20,9 @@ namespace FiveGSwitch.Business
 
             if (QsTile != null)
             {
-                MIUISwitchProvider.Provider.Value.Toggle();
+                SwitchProviderHelper.Provider.Value.Toggle();
 
-                active = MIUISwitchProvider.Provider.Value.IsEnabled;
+                active = SwitchProviderHelper.Provider.Value.IsEnabled;
                 QsTile.State = active ? TileState.Active : TileState.Inactive;
                 QsTile.UpdateTile();
             }
@@ -32,7 +31,7 @@ namespace FiveGSwitch.Business
         protected override void AttachBaseContext(Context @base)
         {
             base.AttachBaseContext(@base);
-            capable = MIUISwitchProvider.Provider.Value.Capable;
+            capable = SwitchProviderHelper.Provider.Value.Capable;
         }
 
         public override void OnStartListening()
@@ -43,7 +42,7 @@ namespace FiveGSwitch.Business
             {
                 if (QsTile != null)
                 {
-                    active = MIUISwitchProvider.Provider.Value.IsEnabled;
+                    active = SwitchProviderHelper.Provider.Value.IsEnabled;
                     QsTile.State = active ? TileState.Active : TileState.Inactive;
                     QsTile.UpdateTile();
                 }

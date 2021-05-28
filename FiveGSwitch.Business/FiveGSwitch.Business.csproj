@@ -47,11 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\FiveGSwitchService.cs" />
     <Compile Include="SwitchProviders\ISwitchProvider.cs" />
-    <Compile Include="SwitchProviders\MIUIFiveGWidgetProvider.cs" />
+    <Compile Include="SwitchProviders\SwitchProviderHelper.cs" />
+    <Compile Include="Widgets\MIUIFiveGWidgetProvider.cs" />
     <Compile Include="SwitchProviders\MIUISwitchProvider.cs" />
   </ItemGroup>
   <ItemGroup>
