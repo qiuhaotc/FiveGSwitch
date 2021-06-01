@@ -25,8 +25,7 @@ namespace FiveGSwitch.Business
             {
                 if (SwitchProviderHelper.Provider.Value.Capable)
                 {
-                    SwitchProviderHelper.Provider.Value.Toggle();
-                    var isEnabled = SwitchProviderHelper.Provider.Value.IsEnabled;
+                    var isEnabled = SwitchProviderHelper.Provider.Value.Toggle();
                     Toast.MakeText(context, $"5G {(isEnabled ? "Enabled" : "Disabled")}", ToastLength.Short).Show();
 
                     var widgetView = new RemoteViews(context.PackageName, Resource.Layout.five_g_widget);

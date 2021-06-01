@@ -43,16 +43,21 @@ namespace FiveGSwitch.Business
             }
         }
 
-        public void Toggle()
+        public bool Toggle()
         {
             try
             {
                 var manager = GetManagerInstance();
-                setUserFiveGEnabled.Value.Invoke(manager, !IsEnabledCore(manager));
+                var setEnableTo = !IsEnabledCore(manager);
+                setUserFiveGEnabled.Value.Invoke(manager, setEnableTo);
+
+                return setEnableTo;
             }
             catch (Exception ex)
             {
                 Toast.MakeText(Application.Context, $"Error Occur: {ex}", ToastLength.Short).Show();
+
+                return false;
             }
         }
 

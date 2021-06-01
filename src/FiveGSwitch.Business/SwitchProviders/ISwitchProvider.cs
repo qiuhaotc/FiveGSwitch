@@ -6,6 +6,6 @@
 
         bool IsEnabled { get; }
 
-        void Toggle();
+        bool Toggle();
     }
 }

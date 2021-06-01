@@ -20,9 +20,7 @@ namespace FiveGSwitch.Business
 
             if (QsTile != null)
             {
-                SwitchProviderHelper.Provider.Value.Toggle();
-
-                active = SwitchProviderHelper.Provider.Value.IsEnabled;
+                active = SwitchProviderHelper.Provider.Value.Toggle();
                 QsTile.State = active ? TileState.Active : TileState.Inactive;
                 QsTile.UpdateTile();
             }
